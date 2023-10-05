@@ -6,6 +6,11 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface CounterComponent {
+        "btnText": string;
+        "color": string;
+        "resetText": string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -22,6 +27,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLCounterComponentElement extends Components.CounterComponent, HTMLStencilElement {
+    }
+    var HTMLCounterComponentElement: {
+        prototype: HTMLCounterComponentElement;
+        new (): HTMLCounterComponentElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -29,10 +40,16 @@ declare global {
         new (): HTMLMyComponentElement;
     };
     interface HTMLElementTagNameMap {
+        "counter-component": HTMLCounterComponentElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
+    interface CounterComponent {
+        "btnText"?: string;
+        "color"?: string;
+        "resetText"?: string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -48,6 +65,7 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface IntrinsicElements {
+        "counter-component": CounterComponent;
         "my-component": MyComponent;
     }
 }
@@ -55,6 +73,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "counter-component": LocalJSX.CounterComponent & JSXBase.HTMLAttributes<HTMLCounterComponentElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }
