@@ -4,3 +4,5 @@
 
 Exploring stencil.js to fill out similarities this library has with a React/Typescript. Goal here is to build out a few UI components and incorporate storybook to describe them visually. 
 
+Work in Progress 
+[Link to Storybook for stencil.js accordion component](https://bournecreative.github.io/stencil-ui/?path=/story/accordion-component--default)
