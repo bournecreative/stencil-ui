@@ -1,0 +1,2 @@
+export default {title: 'accordion-component'};
+  export const Default = () => '<accordion-component>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam pulvinar pretium erat sed tristique.</accordion-component>';
