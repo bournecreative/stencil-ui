@@ -1,0 +1,13 @@
+{
+  "entries": [
+    "components/accordion-component/accordion-component.js",
+    "components/my-component/my-component.js"
+  ],
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "4.4.0",
+    "typescriptVersion": "5.2.2"
+  },
+  "collections": [],
+  "bundles": []
+}
